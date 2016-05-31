@@ -1,0 +1,55 @@
+0.  An artificial long word said to mean a lung disease caused by inhaling very fine 
+ash and sand dust.
+
+1.  Returns resource usage for the calling process, its children, or a calling thread.
+
+2.  16
+
+3.  Possibly to save resources, and instead of copying the entire struct,
+just pass a reference to it.
+
+4.  The stream starts at the beginning of the file after openning it,
+and reads first character, which is represented as int using ASCII, 
+then if character is not end of file (as per for condition), 
+it goes on to check if it is alphabetic, or apostrophy not as a first character. 
+a) If yes, it adds it to the word array and increments the index of array for later use.
+then still inside if alphabetic, it checks whether a word is too long by
+comparing the index of the word array with the pre-defined LENGTH.  
+If it is too long, that it goes through the while loop successfully doing nothing, 
+until either end of file, or end of word, thus bringing the stream to the next word
+or lack of thereof, then sets index to zero 
+and goes back to beginning of for loop getting next character.
+If the length wasn't too long, it goes back to for loop and gets the next character,
+or exits if there is none.  
+b) Else if it is a digit, does the same thing as above in while loop, 
+moving to the next word or end of file, and setting index to 0.
+c) If it isn't alphabetic or digit, but the addition of characters to word array 
+has been successful and the index hadn't been set to zero, then it means 
+we reached the end of the word, and so we can do all the required checking,
+counting, printing, etc., and when done, set index to zero, and start over,
+unless end of file has been reached. 
+
+5.  With scanf we'd have to use a char array, thus using LENGTH space, even
+if a word was one character long, or there could be a potential going out of 
+boundaries. Also, when checking char at a time, if it is not alphabetic or apostr.,
+we can immediately know we can discard it. 
+
+6.  Because what pointer is pointing to is not going to change, that is char.
+
+7.  TRIE. I typedefed a structure node with an array of pointers to node and a bool
+indictating whether there is a word there.
+I also had a structure temp specifically for unload, which consisted of a node pointer
+and an int. I then used an array of temp to storage temporary cursors and indexes for unload,
+that way I didn't have to use a recursive function, and could unload the dictionary
+from bottom up much faster, although of course I used more space, but in this case
+space wasn't a concern.
+
+8.  I couldn't get it to work for a while, but I once I did, it was pretty fast.
+
+9.  All the changes were done to make it work, especially to eliminate memory leaks. 
+They were all connected with bugs in my code.
+
+10. Valgrind showed that I had no memory leaks, but it did show that I have many errors
+saying that conditional jumps depend on an uninitialized value, but I don't know
+how serious it is and I didn't get into correcting it, and I didn'treally know how.
+I'd rather leave it like this for now and move on to the next pset.

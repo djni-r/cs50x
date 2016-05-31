@@ -1,0 +1,254 @@
+/**
+ * styles.css
+ *
+ * Computer Science 50
+ * Problem Set 7
+ *
+ * Global CSS.
+ */
+
+
+.container {
+    /* center contents */
+    font-family: Arial;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background: rgb(120,120,120);
+    width: fill; 
+    height: fill;
+}
+h3
+{
+    color: white;
+}
+.nav {
+    width: 100%;
+    background-color: rgb(75, 75, 75);
+    padding: 8px;
+    font-family: Arial Black;
+}
+#nav-date {
+    font-family: Arial Black;    
+}    
+.btn-new {
+    display: inline-block;
+    background-color: #f9f9f9;
+    color: #428bca;   
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+.btn-new:hover {
+    background-color: #cccccc;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+/* Style The Dropdown Button */
+.dropbtn {
+    background-color: transparent;
+    color: #428bca;   
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+}
+.dropbtn:focus { outline: none; }
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: absolute;
+    display: inline-block;
+} 
+
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    font-family: arial;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    margin: -5px;
+    padding: 5px;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: #428bca;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    margin: 5px;
+    border-radius: 4px;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #cccccc}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: #f1f1f1;
+}
+
+#calendar, #subscribe
+{
+    float: right;
+}
+.dropdown-content {
+    right: 0;
+}
+
+
+#middle 
+
+.form-control
+{
+    /* center form controls */
+    display: inline-block;
+    
+    /* override Bootstrap's 100% width for form controls */
+    width: auto;
+}
+
+#form-topic
+{
+    width: 80%;
+    border: 1px;
+    left: 50px;
+    padding-left: 12px;
+}
+
+#form-text
+{
+    width: 80%;
+    border: 1px;
+    left: 50px;
+    padding-left: 12px;
+    padding-top: -20px;
+}
+
+table, tr, td
+{
+    background-color: rgb(229, 203, 152);
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid black;
+    
+}
+
+table, tr
+{
+    width: 100%;
+}
+
+tr:hover {background-color: rgb(220,220,220)}
+
+.table-header
+{
+    border: 2px;
+}
+.table-body
+{
+    width: 100%;
+}
+
+
+div.img {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: auto;
+    height: 180px;
+}
+
+#gallerybtn
+{
+    position: relative;
+    top: -25px;
+    float: right; 
+    display: inline;
+}
+
+div.img:hover {
+    border: 0px solid #777;
+}
+
+div.img img {
+    width: auto;
+    height: 180px;
+}
+
+div.desc {
+    padding: 5px;
+    text-align: center;
+}
+.responsive {
+    padding: 0 6px;
+    float: left;
+    width: 24.99999%;
+}
+
+#blog
+{
+    border: none;
+    border-radius: 0px;
+    padding: 10px;
+    width: 80%;
+    margin-top: 20px;
+    display: inline-block;
+    text-align: justify;
+    background-color: rgb(184, 159, 79);
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+p.ques
+{
+    float: right;
+    
+}
+
+.btn-default 
+{
+    margin: 10px;
+}
+
+#fileToUpload
+{
+    display: block;
+}
+
+@media only screen and (max-width: 700px){
+    .responsive {
+        width: 49.99999%;
+        margin: 6px 0;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    .responsive {
+        width: 100%;
+    }
+}
+
+#email
+{
+    width: 170px;
+    border: none;
+    margin: 5px;
+    padding: 10px;
+}
+    
+#bottom
+{
+    /* shrink bottom's font size */
+    font-size: smaller;    
+    /* surround with whitespace */
+    margin: 20px;
+}

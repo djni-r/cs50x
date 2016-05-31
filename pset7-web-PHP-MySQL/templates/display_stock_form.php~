@@ -1,0 +1,2 @@
+A share of <?= htmlspecialchars($name) ?> (<?= htmlspecialchars($symb) ?>) costs <strong><?= htmlspecialchars($price) ?></strong>
+<p><a href="javascript:history.go(-1);">Back</a></p>

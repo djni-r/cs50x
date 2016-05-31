@@ -1,0 +1,25 @@
+<div>
+	<ul class="nav nav-pills">
+		<li><a href="quote.php">Quote</a></li>
+		<li><a href="logout.php">Log Out</a></li>
+		<li><a href="sell.php">Sell</a></li>
+	</ul>
+</div>
+
+<div>
+    <table class="table table-striped">
+		<?php foreach ($positions as $position): ?>
+			<tr>
+				<td><?= $position["symbol"] ?> <br></td>
+ 				<td><?= $position["name"] ?> <br></td>
+				<td><?= $position["shares"] ?> <br></td> 
+				<td><?= number_format($position["price"], 2) ?> <br></td>
+				<td><?= number_format($position["total"], 2) ?> </td>
+			</tr>
+ 		<?php endforeach ?>
+		<tr>
+			<td>CASH</td><td></td><td></td><td></td>
+			<td><?= number_format($cash, 2) ?></td>
+		</tr>
+	</table>
+</div>

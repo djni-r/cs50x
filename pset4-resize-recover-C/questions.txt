@@ -1,0 +1,30 @@
+0.  JPEG - 24 bits per pixel, so 2^24 = 16,777,216 millions colors;
+            for grayscale 8 bits, so 256 colors.
+    BMP - from 2 to 2^64. 2^24 (16.8 mln) are common.
+    GIF - 8 bits per pixel, so 256 colors.
+    PNG - 8, 24, or 48 bits per pixel, so 256, 16.8 mln, or 2.8 x 10^14 colors.
+            Grayscale 2, 4, 16, or 256 colors.
+
+1.  GIF
+2.  With lossless compression, every bit of data can be recovered, 
+while in lossy compression some information is permanantly lost.
+3.  JPEG
+4.  The metadata that is pointing to the actual data is erased, and the space
+is moved to a "free" list, while the data stay intact until overwritten.  
+5.  Use sanitazation tools, overwrite data with certain known to work patterns,
+physically destroy disks.
+6.  stdint.h is a header that declares set of integer types of certain sizes,
+and defines corresponding macros. 
+7.  To set an int of a certain size independently of the machine.
+8.  BYTE - 1 byte, WORD - 2, DWORD - 4, LONG - 4
+9.  BM
+10. bfSize is a size in bytes of the bitmap file, and biSize - 
+the size of the bitmapinfoheader.
+11. It means the bitmap is top-down, so it starts in the top left
+12. biBitCount
+13. if there is an error of some sort
+14. Because the fread reads chunk of bytes 1 time.
+15. 3
+16. Skips over the chunk of bytes and positions the stream there. 
+17. Indicates that fseek should skip over from the CURrent position of the stream. 
+18. Rob Bowden

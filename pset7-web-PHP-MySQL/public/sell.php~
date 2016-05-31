@@ -1,0 +1,52 @@
+<?php
+	require("../includes/config.php");
+	if ($_SERVER["REQUEST_METHOD"] == "GET")
+    {
+		// get the form up    
+		render("sell_form.php", ["title" => "Sell"]);    
+	}
+	else if ($_SERVER["REQUEST_METHOD"] == "POST")
+	{	
+		if (empty($_POST["symbol"]))
+		{
+			apologize("Please, enter stock symbol to sell");
+			redirect("sell.php");
+		}
+		else
+		{
+			// look up the stock
+			if (lookup($_POST["symbol"]) === false)
+			{
+				apologize("Please, enter correct symbol");
+			}
+
+			// check whether user owns this stock
+			$rows = query("SELECT * FROM Portfolio WHERE id = ? AND symbol = ?", $_SESSION["id"], $_POST["symbol"]);
+			if ($rows === false)
+			{
+				apologize("You do not own this stock");
+			}
+			else
+			{
+				$cash_add = (lookup($_POST["symbol"])["price"]) * $rows[0]["shares"]; 				
+				if (query("UPDATE users SET cash = cash + ? WHERE id = ?", $cash_add, $_SESSION["id"]) !== false)
+				{				
+					if (query("DELETE FROM Portfolio WHERE id = ? AND symbol = ?", $_SESSION["id"], $_POST["symbol"]) !== false)
+					{						
+						render("sold.php", ["symbol" => $_POST["symbol"]]);				
+					}
+					else
+					{
+						query("UPDATE users SET cash = cash - ? WHERE id = ?", $cash_add, $_SESSION["id"]);
+						apologize("Something went wrong. Please, try again.");
+					}				
+				}
+				else
+				{
+					apologize("Something went wrong. Please, try again.");
+				}
+			}
+		}
+	}	
+
+?>

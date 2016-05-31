@@ -1,0 +1,2 @@
+<?= htmlspecialchars($symb) ?> was sold successfully!
+<p><a href="javascript:history.go(-1);">Back</a></p>
